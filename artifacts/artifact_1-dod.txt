@@ -1,0 +1,5 @@
+- Alle Tasks für das Backlog Item sind erledigt.
+- Die Akzeptanzkriterien wurden erfüllt.
+- Alle zugehörige Tests liefern ein positives Ergebnis.
+- Die Funktionen wurden im Anwendertest positiv getestet.
+- Das Endprodukt entspricht Kundenwünschen.
