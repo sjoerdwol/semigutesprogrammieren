@@ -6,3 +6,13 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: 'https://semigutesprogrammieren.firebaseio.com'
 });
+
+let _db = "";
+
+class DB{
+    constructor(){
+        _db = admin.firestore();
+    }
+}
+
+export default DB;
