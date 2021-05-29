@@ -2,13 +2,14 @@
 <html>
     <head>
         <title>Login</title>
+        <script src="./js/login.js"></script>
     </head>
     <body>
         <div class="login">
             <h1>Bibliothektsverwaltung Login</h1>
-            <p><input type="text" name="username" value="" placeholder="Benutzername eingeben" </p>
-            <p><input type="password" name="password" value="" placeholder="Passwort eingeben" </p>
-            <p><button type="submit">Anmelden</button> </p>
+            <p><input type="text" id="input-username" value="" placeholder="Benutzername eingeben" </p>
+            <p><input type="password" id="input-password" value="" placeholder="Passwort eingeben" </p>
+            <p><button type="submit" id="login-button" onclick="loginOnClick(document.getElementById("input-username").value, document.getElementById("input-password").value)">Anmelden</button> </p>
         </div>
     </body>
 </html>
