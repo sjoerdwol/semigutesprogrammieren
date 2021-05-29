@@ -1,0 +1,19 @@
+{
+  "name": "semigutesprogrammieren",
+  "version": "1.0.0",
+  "description": "semigutesprogrammieren for SEIII at DHBW Karlsruhe 2021",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sjoerdwol/semigutesprogrammieren.git"
+  },
+  "author": "Jannik Leuthold, Maximilian Speck, Jan Henrik Walter, Sjoerd Wolters",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sjoerdwol/semigutesprogrammieren/issues"
+  },
+  "homepage": "https://github.com/sjoerdwol/semigutesprogrammieren#readme"
+}
