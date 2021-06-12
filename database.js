@@ -10,11 +10,11 @@ admin.initializeApp({
 let _db = "";
 
 class DB {
-    constructor(){
+    constructor() {
         _db = admin.firestore();
     }
 
-    getUser(username){
+    getUser(username) {
         return _db.collection("users").where("username", "==", username).get();
     }
 }
