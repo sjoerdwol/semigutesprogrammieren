@@ -28,4 +28,4 @@ function loginRequest(username, password) {
     }
 }
 
-module.exports = { login, loginOnClick, loginRequest };
+module.exports = login, loginOnClick, loginRequest;
