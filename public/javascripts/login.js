@@ -9,4 +9,17 @@ function login(username, password) {
     return usernameNotEmpty && passwordNotEmpty
 }
 
+function loginRequest(username, password) {
+    var logReq = new XMLHttpRequest();
+    const params = {
+        username: username,
+        password: password
+    };
+    logReq.open("POST", "/users/login");
+    logReq.send(JSON.stringify(params));
+    logReq.onLoad = () => {
+        console.log(logReq.responseText);
+    }
+}
+
 module.exports = login, loginOnClick
