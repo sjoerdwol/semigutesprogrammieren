@@ -2,6 +2,13 @@ body {
   padding: 50px;
   font-family: Airal, Helvetica, sans-serif;
   background-color: #689C97;
+  text-align: center;
+  margin: auto;
+}
+
+h1 {
+    font-size: 50px;
+    color: white;
 }
 
 a {
