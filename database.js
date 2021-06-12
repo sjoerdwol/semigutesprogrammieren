@@ -13,6 +13,10 @@ class DB {
     constructor(){
         _db = admin.firestore();
     }
+
+    getUser(username){
+        return _db.collection("users").where("username", "==", username).get();
+    }
 }
 
 module.exports = DB;
