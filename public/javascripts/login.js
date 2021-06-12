@@ -1,12 +1,12 @@
 function loginOnClick(username, password) {
-    if (!login(username, password)){
+    if (!loginValidate(username, password)){
         return false
     } else {
         return loginRequest(username, password)
     }
 }
 
-function login(username, password) {
+function loginValidate(username, password) {
     const usernameNotEmpty = username.length > 0
     const passwordNotEmpty = password.length > 0
 
@@ -28,4 +28,4 @@ function loginRequest(username, password) {
     }
 }
 
-module.exports = login, loginOnClick, loginRequest;
+module.exports = loginValidate, loginOnClick, loginRequest;
