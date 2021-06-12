@@ -15,7 +15,7 @@ class DB {
     }
 
     getUser(username) {
-        return _db.collection("users").where("username", "==", username).get();
+        return _db.collection("users").doc(username).get();
     }
 }
 
