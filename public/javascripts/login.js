@@ -15,9 +15,13 @@ function login(username, password) {
 
 function loginRequest(username, password) {
     var logReq = new XMLHttpRequest();
-    let params = '?username='+username+'&password='+password;
+    const params = {
+        username: username,
+        password: password
+    };
     logReq.open("POST", "/users/login");
-    logReq.send(params);
+    logReq.setRequestHeader("Content-Type", "application/json");
+    logReq.send(JSON.stringify(params));
     logReq.onLoad = () => {
         console.log(logReq.responseText);
     return(logReq.responseText);
