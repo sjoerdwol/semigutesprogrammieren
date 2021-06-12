@@ -1,6 +1,6 @@
 var admin = require("firebase-admin");
 
-var serviceAccount = require("secret/serviceAccountKey.json");
+var serviceAccount = require("./secret/serviceAccountKey.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -9,10 +9,10 @@ admin.initializeApp({
 
 let _db = "";
 
-class DB{
+class DB {
     constructor(){
         _db = admin.firestore();
     }
 }
 
-export default DB;
+module.exports = DB;
