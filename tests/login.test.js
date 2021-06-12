@@ -14,9 +14,3 @@ test('correctly execute login through loginOnClick', () => {
     expect(loginOnClick("", "")).toBe(false)
     expect(loginOnClick("Peter", "Maffay")).toBe(true)
 })
-
-test('correctly authorize through http requests', () => {
-    expect(loginRequest("false", "tralala")).toBe('No such user')
-    expect(loginRequest("admin", "admin")).toBe('Validation succesful!')
-    expect(loginRequest("admin", "tralala")).toBe('Wrong password entered')
-})
