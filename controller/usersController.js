@@ -13,7 +13,7 @@ exports.users_login_post = function(req, res) {
             res.send('Wrong password entered');
         } else {
             sess.username = username;
-            res.send('Validation succesful!');
+            res.send('Validation successful');
         }
     });
 
