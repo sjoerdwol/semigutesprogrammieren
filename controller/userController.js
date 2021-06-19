@@ -1,8 +1,9 @@
 exports.user_login_post = function(req, res) {
     const db = req.app.locals.db;
+    const sess = req.session;
+    
     const username = req.body.username;
     const password = req.body.password;
-    const sess = req.session;
 
     console.log(req.body);
 
