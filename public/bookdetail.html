@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Books</title>
+        <title>Bookdetail</title>
         <link rel="stylesheet" href="./stylesheets/style.css">
         <link rel="stylesheet" href="./stylesheets/bookdetail.css">
     </head>
     <body>
-        <h2>Buchdetail Seite</h2>
-        <form>
-            <p>Titel </p>
-            <input type="text" id="titel" name="Titel">
-            <p>Autor </p>
-            <input type="text" id="autor" name="Autor">
-            <p>Genre </p>
+        <h1>Buchdetail Seite</h1>
+        <div id="bookdetail_top">
+            <form>
+                <p>Titel </p>
+                <input type="text" id="titel" name="Titel">
+                <p>Autor </p>
+                <input type="text" id="autor" name="Autor">
+                <p>Genre </p>
                 <input type="text" id="genre" list="Genre">
-                <datalist id="Genre">
-                    <option value="Kriminalroman"></option>
-                    <option value="Fantasy"></option>
-                    <option value="Science-Fiction"></option>
-                    <option value="Liebesromane"></option>
-                    <option value="Familienroman"></option>
-                    <option value="Reiseroman"></option>
-                    <option value="Historischer Roman"></option>
-                    <option value="Thriller / Gruselromane"></option>
-                    <option value="Sachbücher"></option>
-                    <option value="Fremdsprachige Bücher"></option>
-                </datalist>
+                    <datalist id="Genre">
+                        <option value="Kriminalroman"></option>
+                        <option value="Fantasy"></option>
+                        <option value="Science-Fiction"></option>
+                        <option value="Liebesromane"></option>
+                        <option value="Familienroman"></option>
+                        <option value="Reiseroman"></option>
+                        <option value="Historischer Roman"></option>
+                        <option value="Thriller / Gruselromane"></option>
+                        <option value="Sachbücher"></option>
+                        <option value="Fremdsprachige Bücher"></option>
+                    </datalist>
 
                 <p> ISBN </p>
                 <input type="text" id="isbn" name="ISBN"/>
@@ -38,7 +39,8 @@
 
                 <p>Status </p>
                 <input type="text" id="status" name="Status"/>
-                <button>Anlegen</button>
-        </form>
+            </form>
+        </div>
+        <button>Anlegen</button>
     </body>
 </html>
