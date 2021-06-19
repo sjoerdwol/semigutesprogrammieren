@@ -18,24 +18,20 @@ class DB {
         return _db.collection("users").doc(username).get();
     }
 
-    getBooks(){
+    getBooks() {
         return _db.collection("books").get();
     }
 
-    getBook(id){
-        return _db.collection("books").doc(id).get();
+    getBook(isbn) {
+        return _db.collection("books").doc(isbn).get();
     }
 
-    editBook(id, book){
-        return _db.collection("books").doc(id).update(book);
+    setBook(isbn, book) {
+        return _db.collection("books").doc(isbn).set(book);
     }
 
-    deleteBook(id){
-        return _db.collection("books").doc(id).delete();
-    }
-
-    addBook(book){
-        return _db.collection("books").add(book);
+    deleteBook(isbn) {
+        return _db.collection("books").doc(isbn).delete();
     }
 }
 
