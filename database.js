@@ -17,6 +17,10 @@ class DB {
     getUser(username) {
         return _db.collection("users").doc(username).get();
     }
+
+    getBooks(){
+        return _db.collection("books").get();
+    }
 }
 
 module.exports = DB;
