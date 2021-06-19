@@ -36,7 +36,7 @@ function loginRequest(username, password) {
           }
         }
     };
-    logReq.open("POST", "/users/login");
+    logReq.open("POST", "/user/login");
     logReq.setRequestHeader("Content-Type", "application/json");
     logReq.send(JSON.stringify(params));
 }
