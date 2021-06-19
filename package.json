@@ -23,6 +23,7 @@
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
+    "express-session": "^1.17.2",
     "firebase-admin": "^9.9.0",
     "http-errors": "~1.6.3",
     "jest": "^27.0.1",
