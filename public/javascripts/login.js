@@ -27,5 +27,3 @@ function loginRequest(username, password) {
     return(logReq.responseText);
     }
 }
-
-module.exports = loginValidate, loginOnClick, loginRequest;
