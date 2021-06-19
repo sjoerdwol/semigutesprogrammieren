@@ -26,7 +26,7 @@ function loginRequest(username, password) {
           response = logReq.responseText;
           if (response == 'Validation successful') {
             responseDiv.innerText = "Bitte warten...";
-            window.location.href = '/books.html';
+            window.location.href = '/book_overview.html';
           } else if (response == 'Wrong password entered') {
             responseDiv.innerText = "Falsches Passwort eingegeben!";
           } else if (response == 'No such user') {
