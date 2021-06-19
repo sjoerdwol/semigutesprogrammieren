@@ -7,8 +7,6 @@ exports.users_login_post = function(req, res) {
     console.log(req.body);
 
     db.getUser(username).then((response) => {
-      console.log("resp: " + response.data().password);
-      console.log("pw: " + password);
         if (!response.exists) {
             res.send('No such user');
         } else if (response.data().password != password) {
