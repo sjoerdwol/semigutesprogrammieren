@@ -18,6 +18,25 @@ global.app = {
           books.push(new Book(isbn, isbn + '-author', isbn + '-title', isbn + '-genre', 2000 + i, isbn + '-place'));
         }
         return books;
+      },
+      'getBook': async isbn => {
+        if (isbn && isbn.length > 14 && isbn.substring(0, 14) == 'existing-isbn-') {
+          return new Book(isbn, isbn + '-author', isbn + '-title', isbn + '-genre', 2000, isbn + '-place');
+        } else {
+          return null;
+        }
+      },
+      'setBook': async (isbn, bookData) => {
+        if (!isbn || !bookData || isbn != bookData.isbn) {
+          return false;
+        }
+        return true;
+      },
+      'deleteBook': async isbn => {
+        if (!isbn) {
+          return false;
+        }
+        return true;
       }
     }
   }
