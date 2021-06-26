@@ -1,42 +1,53 @@
-function loginOnClick(username, password) {
-    if (!loginValidate(username, password)){
-        return false
+async function loginOnClick(button) {
+  const loginForm = button.parentNode.parentNode;
+  const responseDiv = loginForm.querySelector("#response");
+  const username = loginForm.querySelector("input[name='username']").value;
+  const password = loginForm.querySelector("input[name='password']").value;
+
+  if (!loginForm.checkValidity()) {
+    responseDiv.innerText = "Bitte alle Felder ausfüllen!";
+    return;
+  }
+
+  responseDiv.innerText = "Bitte warten…";
+  const response = await doLogin(username, password);
+
+  if (!response || !response.result) {
+    responseDiv.innerText = "Unbekannter Fehler beim Einloggen (1)!";
+    return false;
+  } else if (response.result != "success") {
+    if (response.result == "no_such_user") {
+      responseDiv.innerText = "Benutzer nicht gefunden!";
+    } else if (response.result == "wrong_password") {
+      responseDiv.innerText = "Falsches Passwort eingegeben!";
     } else {
-        loginRequest(username, password);
+      responseDiv.innerText = "Unbekannter Fehler beim Einloggen (2)!";
     }
+    return false;
+  }
+
+  // login successful
+  window.location.href = "/books";
 }
 
-function loginValidate(username, password) {
-    const usernameNotEmpty = username.length > 0
-    const passwordNotEmpty = password.length > 0
 
-    return usernameNotEmpty && passwordNotEmpty
-}
 
-function loginRequest(username, password) {
-    var logReq = new XMLHttpRequest();
-    const params = {
-        username: username,
-        password: password
+
+
+function doLogin(username, password) {
+  const request = new XMLHttpRequest();
+  const params = {
+    "username": username,
+    "password": password
+  }
+  request.open("POST", "/api/user/login");
+  request.setRequestHeader("Content-Type", "application/json");
+  request.send(JSON.stringify(params));
+  return new Promise((resolve, reject) => {
+    request.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        resolve(JSON.parse(request.responseText));
+      }
     };
-    logReq.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          console.log("response: " + logReq.responseText);
-          const responseDiv = document.getElementById("response");
-          response = logReq.responseText;
-          if (response == 'Validation successful') {
-            responseDiv.innerText = "Bitte warten...";
-            window.location.href = '/books';
-          } else if (response == 'Wrong password entered') {
-            responseDiv.innerText = "Falsches Passwort eingegeben!";
-          } else if (response == 'No such user') {
-            responseDiv.innerText = "Benutzer nicht gefunden!";
-          } else {
-            responseDiv.innerText = "Unbekannter Fehler!";
-          }
-        }
-    };
-    logReq.open("POST", "api/user/login");
-    logReq.setRequestHeader("Content-Type", "application/json");
-    logReq.send(JSON.stringify(params));
+  });
 }
