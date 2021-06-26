@@ -5,25 +5,26 @@ erklärt die Benutzung der Funktionen, die bis inkl. 26.06.2021 fertiggestellt w
 konnten.
 ----------------------------------------
 Teil 1:
-1. Um das Programm ausführen zu können, wird node.js auf dem Gerät benötigt
-2. Weiterhin werden zwei secret-Dateien benötigt. Diese müssen in einem händisch
+1. Um das Programm ausführen zu können, wird Node.js auf dem Gerät benötigt
+2. Weiterhin werden zwei zusätzliche Dateien benötigt. Diese müssen in einem händisch
    angelegten Ordner abgespeichert werden. Der Ordner soll den Namen 'secret' tragen
    und im root-Ordner liegen.
-3. Sobald die secret-Dateien hinterlegt worden sind, installiert man mit dem Befehl
-   'npm-install' alle nötigen node-Module.
-4. Nachdem alle node-Module installiert worden sind, kann das Programm mit 'npm start'
+3. Sobald die zusätzlichen Dateien hinterlegt wurden, installiert können mit dem Befehl
+   'npm install' alle nötigen Node-Pakete installiert werden.
+4. Nachdem alle Node-Pakete installiert wurden, kann das Programm mit 'npm start'
    gestartet werden. Das Programm steht nun unter 'localhost:3000' zur Verfügung.
 5. Mit dem Befehl 'npm test' können alle geschriebenen Testklassen ausgeführt werden.
    Mit 'npm test -- --collectCoverage' kann zusätzlich die Test-Coverage angezeigt werden.
 ----------------------------------------
 Teil 2:
 1. Nach dem Starten der Anwendung gelangt man auf die Log-In-Seite.
-2. Hier muss man dann einen Benutzernamen und das zugehörige Passwort eingeben und auf den "Anmelde"-Button klicken.
-3. Bei der Eingabe eines falschen Benutzers oder Passworts wird man auf den Fehler aufmerksam gemacht.
+2. Hier muss man dann einen Benutzernamen und das zugehörige Passwort eingeben und auf den "Anmelden"-Button klicken.
+   Derzeit beispielhaft eingerichtet ist der Benutzername "admin" mit dem Passwort "admin".
+3. Bei der Eingabe eines falschen Benutzernamens oder Passworts wird man auf den Fehler aufmerksam gemacht.
 4. Bei korrekter Eingabe gelangt man auf das Buchverzeichnis.
 5. Hier werden einem die angelegten Bücher aufgelistet.
 6. Als Funktion kann man mit dem "Neues Buch anlegen"-Button ein neues Buch hinzufügen.
 7. Auch kann man einen bereits bestehenden Buch-Eintrag per Klicken auf das Mülleimer-Symbol löschen.
-   Dabei wird man nochmal gefragt ob man diesen Eintrag wirklich löschen möchte und kann jeweils mit Ja oder Nein bestätigen oder ablehnen.
+   Dabei wird man nochmals gefragt, ob man diesen Eintrag wirklich löschen möchte, und kann dies bestätigen oder ablehnen.
 8. Durch das Klicken auf den Bleistift kann man einen bestehenden Eintrag ändern und korrigiert abspeichern.
 ----------------------------------------
