@@ -26,7 +26,7 @@ function loginRequest(username, password) {
           response = logReq.responseText;
           if (response == 'Validation successful') {
             responseDiv.innerText = "Bitte warten...";
-            window.location.href = '/book_overview.html';
+            window.location.href = '/books';
           } else if (response == 'Wrong password entered') {
             responseDiv.innerText = "Falsches Passwort eingegeben!";
           } else if (response == 'No such user') {
@@ -36,7 +36,7 @@ function loginRequest(username, password) {
           }
         }
     };
-    logReq.open("POST", "/user/login");
+    logReq.open("POST", "api/user/login");
     logReq.setRequestHeader("Content-Type", "application/json");
     logReq.send(JSON.stringify(params));
 }
