@@ -1,63 +1,35 @@
-ul {
-    list-style-type: none;
-    text-align: left;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
+#books {
+  border-collapse: collapse;
+  background-color: #7FB174;
+  font-size: 18px;
+  color: black;
 }
 
-li{
-    list-style: none;
+#books > thead > tr, #books > tbody > tr, #books > tfoot > tr {
+    border: 1px solid #ddd !important;
 }
 
-ul li {
-    border: 1px solid #ddd;
-    margin-top: -1px;
-    background-color: #7FB174;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    color: black;
-    position: relative;
+#books > thead > tr > td, #books > tbody > tr > td, #books > tfoot > tr > td {
+    border: 1px dotted #ddd;
+    padding: 5px;
 }
 
-ul li:hover {
+#books > tbody > tr:hover {
     background-color: #7FB174;
 }
 
-button{
+#books > tbody {
+  text-align: left;
+}
+
+.right {
     float: right;
 }
 
-/* #bookdetail_top{
-    background-color: #7FB174;
-    margin: auto;
-    margin-bottom: 20px;
-    width: 350px;
-    height: 480px;
-    border-color: black;
-    border-width: 3px;
-    border-style: solid;
+#loading-area {
+  height: 40px;
 }
 
-p{
-    font-size: 18px;
-    margin-bottom: 3px;
+#loading-area > button {
+  top: 50%;
 }
-
-button{
-    background: transparent;
-    border-radius: 4px;
-    border: 3px solid #fff;
-    margin: 20px 10px;
-
-    text-align: center;
-    padding: 0.8rem 2rem;
-    font: 24px Arial, Helvetica, sans-serif;
-    letter-spacing: 2px;
-    transition-duration: 0.4s;
-}
-
-button:hover{
-    background-color: #6B8e23;
-} */
