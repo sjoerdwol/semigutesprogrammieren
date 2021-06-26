@@ -25,13 +25,13 @@
       <tbody>
       </tbody>
       <tfoot>
-        <tr>
+        <tr data-isbn="_CREATE">
           <td colspan="4"><button class="right" onClick="editOnClick(this)">Neues Buch anlegen</button></td>
         </tr>
       </tfoot>
     </table>
     <template id="book-template" class="hidden">
-      <tr>
+      <tr data-isbn="">
         <td class="isbn">&nbsp;</td>
         <td class="title">&nbsp;</td>
         <td class="author">&nbsp;</td>
@@ -42,10 +42,10 @@
       </tr>
     </template>
     <template id="edit-template" class="hidden">
-      <tr class="edit">
+      <tr class="edit" data-isbn="">
         <td colspan="4" class="center">
           <div class="book-edit-form">
-            <form>
+            <form action="javascript:void(0);">
               <p class="input">
                 <label for="isbn">ISBN:</label><br />
                 <input type="text" name="isbn" required />
@@ -84,8 +84,8 @@
               </p>
               <p id="response">&nbsp;</p>
               <p class="input">
-                <button name="save">Speichern</button>
-                <button name="cancel">Abbrechen</button>
+                <button name="save" onClick="saveOnClick(this)">Speichern</button>
+                <button name="cancel" onClick="cancelOnClick(this)">Abbrechen</button>
             </p>
             </form>
           </div>
