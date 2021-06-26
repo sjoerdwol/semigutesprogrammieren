@@ -1,0 +1,12 @@
+Bedienungsanleitung
+----------------------------------------
+1. Nach dem Starten der Anwendung gelangt man auf die Log-In-Seite.
+2. Hier muss man dann einen Benutzernamen und das zugehörige Passwort eingeben und auf den "Anmelde"-Button klicken.
+3. Bei der Eingabe eines falschen Benutzers oder Passworts wird man auf den Fehler aufmerksam gemacht.
+4. Bei korrekter Eingabe gelangt man auf das Buchverzeichnis.
+5. Hier werden einem die angelegten Bücher aufgelistet.
+6. Als Funktion kann man mit dem "Neues Buch anlegen"-Button ein neues Buch hinzufügen.
+7. Auch kann man einen bereits bestehenden Buch-Eintrag per Klicken auf das Mülleimer-Symbol löschen. 
+   Dabei wird man nochmal gefragt ob man diesen Eintrag wirklich löschen möchte und kann jeweils mit Ja oder Nein bestätigen oder ablehnen. 
+8. Durch das Klicken auf den Bleistift kann man einen bestehenden Eintrag ändern und korrigiert abspeichern. 
+----------------------------------------
