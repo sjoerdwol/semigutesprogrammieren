@@ -29,8 +29,15 @@ class Db {
     }
   }
 
-  getBooks() {
-    return _db.collection("books").get();
+  async getBooks() {
+    const response = await this.db.collection('books').get();
+    const books = [];
+    response.forEach(item => {
+      const bookData = item.data();
+      const book = new Book(item.id, bookData.author, bookData.title, bookData.genre, bookData.year, bookData.place);
+      books.push(book);
+    });
+    return books;
   }
 
   getBook(isbn) {
