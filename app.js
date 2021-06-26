@@ -1,25 +1,30 @@
-var createError = require('http-errors');
-var express = require('express');
-var session = require('express-session');
-var path = require('path');
-var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+let createError = require('http-errors');
+let express = require('express');
+let session = require('express-session');
+let path = require('path');
+let bodyParser = require('body-parser');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
 
-var DB = require("./database.js");
+let Db = require("./database.js");
 
-var indexRouter = require('./routes/index');
-var userRouter = require('./routes/user');
+let indexRouter = require('./routes/index');
+let userRouter = require('./routes/user');
 
-var app = express();
+let app = express();
 
-const sessionConfig = require('./secret/sessionConfig.json');
+const sessionConfig = {
+  'secret': require('./secret/sessionSecret.json').secret,
+  'saveUninitialized': true,
+  'resave': true
+};
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.locals.db = new DB();
+app.locals.db = new Db();
 
 app.use(logger('dev'));
 app.use(express.json());

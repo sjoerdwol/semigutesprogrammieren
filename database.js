@@ -9,7 +9,7 @@ admin.initializeApp({
 
 let _db = "";
 
-class DB {
+class Db {
     constructor() {
         _db = admin.firestore();
     }
@@ -35,4 +35,4 @@ class DB {
     }
 }
 
-module.exports = DB;
+module.exports = Db;
