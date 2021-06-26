@@ -40,16 +40,35 @@ class Db {
     return books;
   }
 
-  getBook(isbn) {
-    return _db.collection("books").doc(isbn).get();
+  async getBook(isbn) {
+    if (!isbn) {
+      return null;
+    }
+    const response = await this.db.collection('books').doc(isbn).get();
+    if (!response.exists) {
+      return null;
+    } else {
+      const isbn = response.id;
+      const bookData = response.data();
+      const book = new Book(isbn, bookData.author, bookData.title, bookData.genre, bookData.year, bookData.place);
+      return book;
+    }
   }
 
-  setBook(isbn, book) {
-    return _db.collection("books").doc(isbn).set(book);
+  async setBook(isbn, bookData) {
+    if (!isbn || !bookData || isbn != bookData.isbn) {
+      return false;
+    }
+    await this.db.collection('books').doc(isbn).set(bookData);
+    return true; // TODO error handling
   }
 
-  deleteBook(isbn) {
-    return _db.collection("books").doc(isbn).delete();
+  async deleteBook(isbn) {
+    if (!isbn) {
+      return false;
+    }
+    await this.db.collection('books').doc(isbn).delete();
+    return true; // TODO error handling
   }
 }
 
