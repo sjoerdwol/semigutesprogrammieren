@@ -1,5 +1,4 @@
 class Book {
-  let db, isbn, author, title, genre, year, place;
 
   _constructor(db, isbn, author, title, genre, year, place) {
     this.db = db;
@@ -25,12 +24,12 @@ class Book {
   }
 
   storeInDatabase() {
-    return new Promise(function resolve, reject) {
-      db.setBook(this.isbn, {this.author, this.title, this.genre, this.year, this.place }).then((response) => {
+    return new Promise(function(resolve, reject) {
+      //db.setBook(this.isbn, {this.author, this.title, this.genre, this.year, this.place }).then((response) => {
         resolve();
       });
     }
   }
-}
+
 
 module.exports = Book;

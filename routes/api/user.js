@@ -1,8 +1,8 @@
 let express = require('express');
 let router = express.Router();
-let userApiController = require('../../controller/api/user.js')
+let userApiController = require('../../controller/api/user');
 
-/* POST request for validation of user credentials */
-router.post('/login', userApiController.user_login_post);
+/* Validate user credentials and assign user to current session */
+router.post('/login', userApiController.api_user_login_post);
 
 module.exports = router;

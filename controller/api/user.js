@@ -1,21 +1,27 @@
-exports.user_login_post = function(req, res) {
-    const db = req.app.locals.db;
-    const sess = req.session;
-    
-    const username = req.body.username;
-    const password = req.body.password;
+/* Validate user credentials and assign user to current session */
+async function api_user_login_post(req, res) {
+  const db = req.app.locals.db;
+  const sess = req.session;
 
-    console.log(req.body);
+  const username = req.body.username;
+  const password = req.body.password;
 
-    db.getUser(username).then((response) => {
-        if (!response.exists) {
-            res.send('No such user');
-        } else if (response.data().password != password) {
-            res.send('Wrong password entered');
-        } else {
-            sess.username = username;
-            res.send('Validation successful');
-        }
-    });
+  const response = {};
 
+  if (!username || !password) {
+    response.result = 'incomplete_request';
+  } else {
+    const dbUser = await db.getUser(username);
+    if (!dbUser) {
+      response.result = 'no_such_user';
+    } else if (dbUser.data.password != password) {
+      response.result = 'wrong_password';
+    } else {
+      sess.username = username;
+      response.result = 'success';
+    }
+  }
+  res.send(JSON.stringify(response));
 };
+
+module.exports = { api_user_login_post };

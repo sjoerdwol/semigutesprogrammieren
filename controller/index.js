@@ -1,7 +1,7 @@
-async function index_get(req, res) {
-  const sess = req.session;
+const globalController = require('./global');
 
-  if (!sess.username) {
+async function index_get(req, res) {
+  if (!await globalController.isLoggedIn(req)) {
     res.redirect('/login');
   } else {
     res.redirect('/books');
