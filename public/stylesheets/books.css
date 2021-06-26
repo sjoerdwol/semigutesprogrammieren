@@ -33,3 +33,37 @@
 #loading-area > button {
   top: 50%;
 }
+
+.edit > td {
+  text-align: center;
+}
+
+
+
+
+
+form > p.input > input {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 5px;
+}
+
+form > p.input {
+  margin: 16px 10px;
+}
+
+form > p.input > button {
+  background: transparent;
+  border-radius: 4px;
+  border: 3px solid #fff;
+  margin: 16px 10px;
+
+  padding: 0.8rem 2rem;
+  font-size: 18px;
+  letter-spacing: 2px;
+  transition-duration: 0.4s;
+}
+
+form > p.input > button:hover {
+  background-color: #6B8e23;
+}

@@ -4,6 +4,7 @@
     <title>Buchverzeichnis</title>
     <link rel="stylesheet" href="./stylesheets/global.css">
     <link rel="stylesheet" href="./stylesheets/books.css">
+    <script src="./javascripts/global.js"></script>
     <script src="./javascripts/books.js"></script>
   </head>
   <body onload="refreshBooks()">
@@ -25,7 +26,7 @@
       </tbody>
       <tfoot>
         <tr>
-          <td colspan="4"><button class="right">Neues Buch anlegen</button></td>
+          <td colspan="4"><button class="right" onClick="editOnClick(this)">Neues Buch anlegen</button></td>
         </tr>
       </tfoot>
     </table>
@@ -35,8 +36,59 @@
         <td class="title">&nbsp;</td>
         <td class="author">&nbsp;</td>
         <td class="actions">
-          <button class="right">🗑</button>
-          <button class="right">✏️</button>
+          <button class="right" onClick="deleteOnClick(this)">🗑</button>
+          <button class="right" onClick="editOnClick(this)">✏️</button>
+        </td>
+      </tr>
+    </template>
+    <template id="edit-template" class="hidden">
+      <tr class="edit">
+        <td colspan="4" class="center">
+          <div class="book-edit-form">
+            <form>
+              <p class="input">
+                <label for="isbn">ISBN:</label><br />
+                <input type="text" name="isbn" required />
+              </p>
+              <p class="input">
+                <label for="title">Titel:</label><br />
+                <input type="text" name="title" required /><br />
+              </p>
+              <p class="input">
+                <label for="author">Autor:</label><br />
+                <input type="text" name="author" required /><br />
+              </p>
+              <p class="input">
+                <label for="genre">Genre:</label><br />
+                <input type="text" name="genre" list="genres" required /><br />
+                <datalist id="genres">
+                  <option value="Kriminalroman"></option>
+                  <option value="Fantasy"></option>
+                  <option value="Science-Fiction"></option>
+                  <option value="Liebesroman"></option>
+                  <option value="Familienroman"></option>
+                  <option value="Reiseroman"></option>
+                  <option value="Historischer Roman"></option>
+                  <option value="Thriller / Gruselroman"></option>
+                  <option value="Sachbuch"></option>
+                  <option value="Fremdsprachiges Buch"></option>
+                </datalist>
+              </p>
+              <p class="input">
+                <label for="year">Erscheinungsjahr:</label><br />
+                <input type="text" name="year" required />
+              </p>
+              <p class="input">
+                <label for="place">Erscheinungsort:</label><br />
+                <input type="text" name="place" required />
+              </p>
+              <p id="response">&nbsp;</p>
+              <p class="input">
+                <button name="save">Speichern</button>
+                <button name="cancel">Abbrechen</button>
+            </p>
+            </form>
+          </div>
         </td>
       </tr>
     </template>
