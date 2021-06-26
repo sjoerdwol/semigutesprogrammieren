@@ -6,10 +6,10 @@ konnten.
 ----------------------------------------
 Teil 1:
 1. Um das Programm ausführen zu können, wird Node.js auf dem Gerät benötigt
-2. Weiterhin werden zwei zusätzliche Dateien benötigt. Diese müssen in einem händisch
-   angelegten Ordner abgespeichert werden. Der Ordner soll den Namen 'secret' tragen
+2. Weiterhin werden zwei zusätzlich bereitgestellte Dateien benötigt. Diese müssen in einem
+   händisch angelegten Ordner abgespeichert werden. Der Ordner soll den Namen 'secret' tragen
    und im root-Ordner liegen.
-3. Sobald die zusätzlichen Dateien hinterlegt wurden, installiert können mit dem Befehl
+3. Sobald die zusätzlichen Dateien hinterlegt wurden, können mit dem Befehl
    'npm install' alle nötigen Node-Pakete installiert werden.
 4. Nachdem alle Node-Pakete installiert wurden, kann das Programm mit 'npm start'
    gestartet werden. Das Programm steht nun unter 'localhost:3000' zur Verfügung.
