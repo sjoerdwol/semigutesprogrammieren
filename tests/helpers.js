@@ -1,4 +1,5 @@
 const User = require('../model/user');
+const Book = require('../model/book');
 
 global.app = {
   'locals': {
@@ -9,9 +10,26 @@ global.app = {
         } else {
           return null;
         }
+      },
+      'getBooks': async () => {
+        const books = [];
+        for (let i = 1; i <= 99; i++) {
+          const isbn = 'existing-isbn-' + i;
+          books.push(new Book(isbn, isbn + '-author', isbn + '-title', isbn + '-genre', 2000 + i, isbn + '-place'));
+        }
+        return books;
       }
     }
   }
+};
+
+global.bookSchema = {
+  'isbn': 'string',
+  'author': 'string',
+  'title': 'string',
+  'genre': 'string',
+  'year': 'number',
+  'place': 'string'
 };
 
 global.arrayContainsOnlyObjectsWithSchema = (arr, schema) => {
