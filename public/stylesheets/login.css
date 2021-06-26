@@ -1,32 +1,35 @@
 #login {
-    margin: auto;
-    width: 350px;
+  margin: auto;
+  width: 350px;
 
-    background-color: #7FB174;
-    border-color: black;
-    border-width: 3px;
-    border-style: solid;
+  background-color: #7FB174;
+  border-color: black;
+  border-width: 3px;
+  border-style: solid;
 }
 
 input {
-    width: 60%;
-    padding: 12px 20px;
-    margin: 20px 10px;
+  width: 60%;
+  padding: 12px 20px;
+  margin: 5px;
 }
 
-button{
-    background: transparent;
-    border-radius: 4px;
-    border: 3px solid #fff;
-    margin: 20px 10px;
-
-    text-align: center;
-    padding: 0.8rem 2rem;
-    font: 24px Arial, Helvetica, sans-serif;
-    letter-spacing: 2px;
-    transition-duration: 0.4s;
+form > p.input {
+  margin: 16px 10px;
 }
 
-button:hover{
-    background-color: #6B8e23;
+button {
+  background: transparent;
+  border-radius: 4px;
+  border: 3px solid #fff;
+  margin: 16px 10px;
+
+  padding: 0.8rem 2rem;
+  font-size: 24px;
+  letter-spacing: 2px;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: #6B8e23;
 }
